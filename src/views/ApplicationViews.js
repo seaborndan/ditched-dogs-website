@@ -1,4 +1,6 @@
 import { Outlet, Route, Routes } from "react-router-dom"
+import { DogContainer } from "../components/doglist/DogContainer"
+import { DogForm } from "../components/doglist/DogForm"
 import { DogList } from "../components/doglist/DogList"
 
 export const ApplicationViews = () => {
@@ -8,11 +10,14 @@ export const ApplicationViews = () => {
                 <>
                     <h1>Ditched Dogs</h1>
                     <div>Your one-stop-shop to ditch your dogs or nab someone elses</div>
-                    <DogList />
+                    <DogContainer />
                     <Outlet />
                 </>
             }>
 
+            </Route>
+            <Route path="/create" element={ <DogForm></DogForm>
+            }>
             </Route>
         </Routes>
     )
