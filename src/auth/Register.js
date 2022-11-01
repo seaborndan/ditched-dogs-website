@@ -51,26 +51,37 @@ export const Register = (props) => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Ditched Dogs</h1>
-                <fieldset>
-                    <label htmlFor="fullName"> Full Name </label>
-                    <input onChange={updateCustomer}
-                           type="text" id="fullName" className="form-control"
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-gray-50 dark:bg-gray-900">
+            <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                <img class="w-20 h-20 mr-2" src="https://i.ibb.co/qMzfcdm/unnamed.png" alt="logo"/>Ditched Dogs  
+            </a>
+            <div className="border-4 rounded-md bg-white w-1/4">
+                <div className="flex flex-col justify-center my-8">
+                    <form className="form--login" onSubmit={handleRegister}>
+                        <h1 className="text-center text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white mb-2">Please Register for Ditched Dogs</h1>
+                        <fieldset>
+                        <label htmlFor="fullName">
+                            <p className="text-center"> Full Name </p>
+                        </label>
+                        <input onChange={updateCustomer}
+                           type="text" id="fullName" className="form-control text-center w-full mb-2"
                            placeholder="Enter your name" required autoFocus />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="email"> Email address </label>
-                    <input onChange={updateCustomer}
-                        type="email" id="email" className="form-control"
-                        placeholder="Email address" required />
-                </fieldset>
-                <fieldset>
-                    <button type="submit"> Register </button>
-                </fieldset>
-            </form>
-        </main>
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="email"> 
+                                <p className="text-center">Email address</p>
+                            </label>
+                            <input onChange={updateCustomer}
+                                type="email" id="email" className="form-control text-center w-full mb-2"
+                                placeholder="email@example.com" required />
+                        </fieldset>
+                        <fieldset className="flex flex-col justify-center hover:underline">
+                            <button type="submit" className=""> Register </button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
     )
 }
 

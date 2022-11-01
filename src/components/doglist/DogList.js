@@ -73,19 +73,44 @@ useEffect(
 
 
   return <>
-  <button id="showAllCheck" onClick={() => setShowAll(true)} >Show All </button>
-  <label>
-  <input type="checkbox" id="immunizedCheck" onClick={() => toggleImmunized() }/>
-  Immunized
-  </label>
-  <h2>Our Wonderful Ditched Dogs</h2>
-  <article className="dogList">
-    {
-      filteredDogs.map(
-        (dog) => <DogEntry dogObject={dog} />
-      )
-    }
-  </article> 
+  
+  <div className="flex flex-col justify-center">
+    <button className="pb-5" id="showAllCheck" onClick={() => setShowAll(true)} >Show All </button>
+    <div className="flex flex-row justify-evenly">
+      <label className="">
+        <input type="checkbox" class="accent-pink-500" id="immunizedCheck" onClick={() => toggleImmunized() }/>
+        Immunized
+      </label>
+      <label className="">
+        <input type="checkbox" class="accent-pink-500" id="immunizedCheck" onClick={() => toggleImmunized() }/>
+        Immunized
+      </label>
+      <label className="">
+        <input type="checkbox" class="accent-pink-500" id="immunizedCheck" onClick={() => toggleImmunized() }/>
+        Immunized
+      </label>
+    </div>
+  </div>
+  <div className="flex flex-col items-center justify-center ">
+    <p>Our Wonderful Ditched Dogs</p>
+      <article className="dogList">
+        <div className="grid grid-cols-2 gap-10 max-w-5xl xs:grid-cols-2 h-3/5">
+          {
+        
+            filteredDogs.map(
+              (dog) => <DogEntry dogObject={dog} />
+            )
+          
+          }
+          
+        </div>
+        
+      </article> 
+      <button className="" onClick={() => navigate("/create")}><p className="text-center"></p>Click here to list your own dog!</button>
+  </div>
+  <div class="flex justify-center mb-10">
+
+  </div>
   
   
   
