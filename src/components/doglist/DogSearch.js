@@ -1,7 +1,7 @@
 export const DogSearch = ({ setterFunction }) => {
   return (
     <div>
-      <input onChange={
+      <input class="" onChange={
         (changeEvent) => {
           setterFunction(changeEvent.target.value)
         }

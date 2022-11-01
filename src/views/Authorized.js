@@ -13,3 +13,4 @@ export const Authorized = ({ children }) => {
             state={{ location }} />
     }
 }
+

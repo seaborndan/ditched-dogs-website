@@ -8,8 +8,9 @@ export const DogContainer = () => {
   const navigate = useNavigate();
 
   return <>
-    <button onClick={() => navigate("/create")}>Click here to list your own dog!</button>
+    <div className="flex flex-row justify-end mt-5">
     <DogSearch setterFunction={setSearchTerms} />
+    </div>
     <DogList searchTermState={searchTerms}/>
   </>
 }

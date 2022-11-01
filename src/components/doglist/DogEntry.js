@@ -8,13 +8,13 @@ export const DogEntry = ( {dogObject} ) => {
     navigate("/adopt", {state:{dogObject}})
   }
 
-  return <section className="dogEntry--">
-    <header>{dogObject.name} the Dog</header>
-    <img className="dog_img" src={dogObject.imgUrl} />
+  return <section className="dogEntry-- flex flex-col">
+    <header className="text-center">{dogObject.name} the Dog</header>
+    <img className="dog_img h-2/3" src={dogObject.imgUrl} />
     <button onClick={
         (clickEvent) => handleAdoptClick(clickEvent)
       }
-      className="btn btn-submit">
+      className="btn btn-submit hover:underline">
         Adopt This Doggy!
     </button>
   </section>
