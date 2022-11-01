@@ -18,6 +18,7 @@ export const DogList = ({ searchTermState }) => {
         fetch(`http://localhost:8088/dogs`)
         .then(response => response.json())
         .then((dogArray) => {
+            setFiltered(dogArray)
             setDogs(dogArray)
         })
     },
@@ -40,6 +41,7 @@ useEffect(
   () => {
     if(showAll) {
       setFiltered(dogs)
+      document.getElementById('filters').reset();
     }
   },
   [showAll]
@@ -73,24 +75,22 @@ useEffect(
 
 
   return <>
-  
   <div className="flex flex-col justify-center">
-    <button className="pb-5" id="showAllCheck" onClick={() => setShowAll(true)} >Show All </button>
+    <button className="pb-5" id="showAllCheck" onClick={() => {
+      document.getElementById('filters').reset()
+      toggleImmunized()
+      setShowAll(true)}} >Show All </button>
     <div className="flex flex-row justify-evenly">
+      <form id="filters">
       <label className="">
         <input type="checkbox" class="accent-pink-500" id="immunizedCheck" onClick={() => toggleImmunized() }/>
         Immunized
       </label>
-      <label className="">
-        <input type="checkbox" class="accent-pink-500" id="immunizedCheck" onClick={() => toggleImmunized() }/>
-        Immunized
-      </label>
-      <label className="">
-        <input type="checkbox" class="accent-pink-500" id="immunizedCheck" onClick={() => toggleImmunized() }/>
-        Immunized
-      </label>
+      </form>
     </div>
+  
   </div>
+
   <div className="flex flex-col items-center justify-center ">
     <p>Our Wonderful Ditched Dogs</p>
       <article className="dogList">
@@ -112,7 +112,7 @@ useEffect(
 
   </div>
   
-  
-  
   </>
+  
+  
 }
