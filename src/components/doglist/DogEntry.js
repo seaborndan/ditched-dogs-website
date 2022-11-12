@@ -11,6 +11,14 @@ export const DogEntry = ( {dogObject} ) => {
   }
 
   const handleAdoptClick = (event) => {
+    let text;
+    if(confirm("Are you sure you want to adopt this wonderful dog?") === true) {
+      text = "You pressed yes";
+    }
+    else {
+      text = "You changed your mind."
+    }
+    
     navigate("/adopt", {state:{dogObject}})
   }
   
@@ -46,6 +54,7 @@ export const DogEntry = ( {dogObject} ) => {
       <p>{dogObject.description}</p>
     </ul>
     <button onClick={
+        
         (clickEvent) => handleAdoptClick(clickEvent)
       }
       className="btn btn-submit hover:underline mt-2">
