@@ -13,7 +13,7 @@ export const DitchedDogs = () => {
     <Route path="*" element={
       <Authorized>
         <>
-          <div class="flex justify-center">
+          <div class="flex flex-row justify-end">
           <NavBar />
           </div>
           <ApplicationViews />
