@@ -17,7 +17,7 @@ export const DogAdopt = () => {
     []
   )
   
-  
+
   
   const handleSaveButtonClick = (event, doggieParam) => {
     event.preventDefault()
@@ -48,6 +48,9 @@ export const DogAdopt = () => {
     copy.isAdopted = true
     //assignDoggie(copy)
     handleSaveButtonClick(event, copy)
-  }}>Y</button>  |  N</p>
+  }}>Y</button>
+  <button className="mx-5"onClick={(event) => {
+    navigate("/")
+  }}><p>N</p></button></p>
   </>
 }

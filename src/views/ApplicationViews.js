@@ -1,8 +1,10 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { DogAdopt } from "../components/doglist/DogAdopt"
 import { DogContainer } from "../components/doglist/DogContainer"
+import { DogEdit } from "../components/doglist/DogEdit"
 import { DogForm } from "../components/doglist/DogForm"
 import { DogList } from "../components/doglist/DogList"
+import { MyDogs } from "../components/doglist/MyDogs"
 
 export const ApplicationViews = () => {
 	return (
@@ -30,7 +32,11 @@ export const ApplicationViews = () => {
             <Route path="/create" element={ <DogForm></DogForm>
             }>
             </Route>
+            <Route path="/myDogs" element={ <MyDogs></MyDogs>
+            }>
+            </Route>
             <Route path="/adopt" element={ <DogAdopt></DogAdopt> }></Route>
+            <Route path="/edit" element={ <DogEdit></DogEdit> }></Route>
         </Routes>
     )
 }

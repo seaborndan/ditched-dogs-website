@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { DogEntry } from "./DogEntry"
+
+
 export const DogList = ({ searchTermState }) => {
   //initial dog array
   const [dogs, setDogs] = useState([])
@@ -30,7 +32,7 @@ useEffect(
   () => {
     const searchDogs = dogs.filter(dog => 
     {
-      return dog.breed.toLowerCase().startsWith(searchTermState.toLowerCase())
+      return (dog.breed.toLowerCase().startsWith(searchTermState.toLowerCase()))
     })
     setFiltered(searchDogs)
   },
@@ -50,7 +52,7 @@ useEffect(
 
 const toggleImmunized = () => {
   var immunizedCheckbox = document.getElementById("immunizedCheck");
-  if(immunizedCheckbox.checked === true) {
+  if((immunizedCheckbox.checked === true)) {
     setShowImmunized(true)
   }
   else {
@@ -62,7 +64,7 @@ useEffect(
   () => {
     if(showImmunized) {
       const immunizedDogs = dogs.filter(dog => {
-        return dog.isImmunized
+        return (dog.isImmunized)
       })
       setFiltered(immunizedDogs)
     }
